@@ -10,16 +10,10 @@ function Contact() {
       <>
         <div id='contact' className="contact-section">
             <div className='header-container'>
-                <h1 className='header'>
-                Contact
-                </h1>
+
             </div>
           <div className='contact-content'>
-          <div className='email-container'>
-            <a className='email-button' href='mailto:sean13.osullivan@gmail.com'>
-                Email Me
-            </a>
-          </div>
+
           <div className='social-links'>
             <div className='social-container'>
                 <a href='https://www.linkedin.com/in/seanosullivan13/' target='_blank'>
@@ -54,6 +48,11 @@ function Contact() {
                     LeetCode
                 </p>
             </div>
+          </div>
+          <div className='email-container'>
+            <a className='email-button' href='mailto:sean13.osullivan@gmail.com'>
+                Email Me
+            </a>
           </div>
           </div>
           

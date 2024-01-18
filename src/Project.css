@@ -1,15 +1,18 @@
+
 .project-container {
     background-color: rgb(255, 255, 255);
     margin: 10px;
-    min-width: 300px;
+    min-width: 300px; /* Minimum width set */
+    max-width: 100%; /* Maximum width to prevent overflow */
     min-height: 300px;
     color: black;
     border-radius: 5px;
-    padding: 20px 30px 20px 20px; /* Updated padding */
-    /*border: 2px solid rgb(91, 197, 226); */
+    padding: 20px; /* Uniform padding */
     border: 2px solid black;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-width 0.3s ease; /* Smooth transition for hover effects */
-    position: relative; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-width 0.3s ease;
+    position: relative;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    
 }
 
 .project-container:hover {
@@ -26,7 +29,6 @@
 }
 
 .project-title {
-
     margin: 0px;
     margin-top: 10px;
     margin-left: 10px;
@@ -48,12 +50,16 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 30px;
-    
+    overflow: hidden; /* Add overflow hidden to prevent text spilling out */
+    text-overflow: ellipsis; /* Adds an ellipsis to indicate text overflow */
 }
 .project-info {
     display: flex;
-    justify-content: space-between; /* Adjusts about and right-side to each end */
-    align-items: center; /* Aligns items vertically */
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    overflow: hidden; /* Prevents content from overflowing */
+    word-wrap: break-word; /* Ensures long words are broken and wrapped to the next line */
 }
 
 .right-side {
@@ -88,5 +94,16 @@
     transform: translateX(10px) scale(1.08); /* Move the element 10 pixels to the right */
     cursor: pointer;
     
+}
+
+@media screen and (max-width: 600px) {
+    .project-container {
+        padding: 10px;
+    }
+
+    .project-about, .project-title, .project-language {
+        margin: 10px;
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
 }
 

@@ -68,7 +68,10 @@ function Projects() {
 
   return (
     <div id='projects'>
-        <AnimatedText className='project-title' text="Projects" />
+      <div className='project-title'>
+      <AnimatedText id='title' text="Projects" />
+      </div>
+
         <div className='projects-container'>
         {projectsData.map((project) => (
             <Project key={project.id} language={project.language} name={project.name} about={project.about} link={project.link} icon={project.icon}/>

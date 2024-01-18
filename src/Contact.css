@@ -1,23 +1,23 @@
 .contact-section {
     width: 100vw;
-    height: 75vh;
-    display: flex; 
+    min-height: 65vh;
+    max-height: fit-content;
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     background-color: black;
-    color: white
-  }
+    color: white;
+    min-width: 500px;
+}
 
 .header {
     margin-bottom: 0px;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .contact-content {
-    flex: 1;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -28,10 +28,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .email-button {
-    
     padding: 15px;
     border-radius: 50px;
     border: 2px solid white;
@@ -42,48 +42,52 @@
 }
 
 .email-button:hover {
-
     color: black;
     background-color: white;
-
 }
-  
+
 .social-links {
     display: flex;
     flex-direction: row;
-    margin-top:50px;
     justify-content: center;
+    gap: 10%;
+    flex-wrap: wrap; /* Wrap social links on smaller screens */
 }
 
 .social-link {
     padding: 20px;
 }
 
-p {
-    flex: 1;
-    justify-content: center;
-    text-align: center;
-
-}
-
 .social-image {
-    width: 100px;
+    width: 100px; /* Adjust as needed */
     filter: brightness(0) invert(1);
-    transition: transform 0.3s ease
+    transition: transform 0.3s ease;
 }
 
 .social-container {
-    margin: 50px;
-    margin-top: 20px;
+    margin: 50px 20px; /* Adjusted margin */
 }
 
 .social-image:hover {
-
-    transform: scale(1.1); /* Slightly increase size */
-
+    transform: scale(1.1);
 }
 
 #leetcode-icon {
     border-radius: 50%;
 }
 
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 800px) {
+    .email-button, .social-link {
+        font-size: 12px; /* Smaller font size for smaller screens */
+        padding: 10px; /* Smaller padding */
+    }
+
+    .social-image {
+        width: 80px; /* Smaller size for icons */
+    }
+
+    .contact-content, .email-container, .social-links {
+        margin: 10px; /* Smaller margins */
+    }
+}
